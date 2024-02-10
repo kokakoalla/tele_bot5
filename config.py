@@ -1,2 +1,2 @@
-TOKEN='6925318413:AAEA8Odhpv_MlG8rps0DWIuPHUp-RFbcWN0'
-SQLALCHEMY_URL="sqlite+aiosqlite:///db.sqlite3"
+TOKEN = '6859043859:AAEMVFz3aWA4U97DB6XLRG-PoXO3RGN4Kzg'
+SQLALCHEMY_URL = "sqlite+aiosqlite:///db.sqlite3"

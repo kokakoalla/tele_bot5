@@ -1,6 +1,7 @@
 from aiogram import Router, F
 from aiogram.filters import CommandStart
 from aiogram.types import Message, CallbackQuery
+from aiogram import types
 
 import app.keyboards as kb
 from app.database.requests import get_product
@@ -15,6 +16,12 @@ async def cmd_start(message: Message):
 async def catalog(message: Message):
     await message.answer('choose', reply_markup=await kb.categories())
 
+@router.message(F.text == 'about')
+async def catalog(message: Message):
+    url = 'https://github.com/kokakoalla/tele_bot5/blob/master/README.md'
+    text = f"{url}"
+    await message.answer(text)
+
 
 @router.callback_query(F.data.startswith('category_'))
 async def category_selected(callback: CallbackQuery):
@@ -27,4 +34,4 @@ async def product_selected(callback: CallbackQuery):
     product_id = callback.data.split('_')[1]
     product = await get_product(product_id)
     await callback.message.answer(product.description)
-    await callback.answer('выбрано')
+    await callback.answer('')

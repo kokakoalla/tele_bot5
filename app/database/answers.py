@@ -9,8 +9,10 @@ engine = create_async_engine(SQLALCHEMY_URL, echo=True)
 
 async_session = async_sessionmaker(engine)
 
+
 class Base(AsyncAttrs, DeclarativeBase):
     pass
+
 
 class User(Base):
     __tablename__ = 'users'
@@ -26,6 +28,7 @@ class Category(Base):
     name: Mapped[str] = mapped_column()
 
     products = relationship('Product', back_populates='category')
+
 
 class Product(Base):
     __tablename__ = 'products'
