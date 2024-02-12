@@ -12,6 +12,8 @@ https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/workin
 Avaa Telegram:
 Avaa https://t.me/BotFather, suorita komento /newbot, hanki token ja liitä se config.py-tiedostoon olemassa olevan sijaan.
 
+-- lukujärjestys ja mikä luokka
+
 
 
 
